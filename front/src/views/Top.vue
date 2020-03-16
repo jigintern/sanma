@@ -1,10 +1,9 @@
 <template>
   <div class="home">
-    <h1>Top page</h1>
-
     <v-container>
       <v-container>
-        <v-row dense>
+        <div v-show="loading">Loading...</div>
+        <v-row dense v-show="!loading">
           <v-col
             v-for="(article, index) in articles"
             :key="index"
@@ -19,9 +18,9 @@
             >
               <v-card-title class="headline">{{ article.title }}</v-card-title>
 
-              <v-card-subtitle>{{ article.body }}</v-card-subtitle>
+              <v-card-subtitle>{{ article.body | ellipsis }}</v-card-subtitle>
 
-              <v-card-actions> </v-card-actions>
+              <v-card-actions>id: {{ article.user.id }}</v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -34,6 +33,9 @@
 export default {
   data: function() {
     return {
+      loading: true,
+      articles: []
+      /*
       articles: [
         {
           id: 10,
@@ -66,7 +68,26 @@ export default {
             "3分で分かります。高専に任せろ。3分で分かります。高専に任せろ。3分で分かります。高専に任せろ。3分で分かります。高専に任せろ。"
         }
       ]
+      */
     };
+  },
+
+  filters: {
+    ellipsis(value) {
+      if (!value) return "";
+      if (value.length > 10) {
+        return value.slice(0, 100) + "...";
+      }
+      return value;
+    }
+  },
+
+  mounted: function() {
+    this.$axios.get("https://qiita.com/api/v2/items").then(res => {
+      console.log(res);
+      this.articles = res.data;
+      this.loading = false;
+    });
   },
 
   methods: {
