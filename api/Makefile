@@ -11,16 +11,3 @@ run:
 
 rmi:
 	@docker rmi sanma-api
-
-# org
-c-prune:
-	docker container prune
-
-i-prune:
-	docker image prune
-
-v-prune:
-	docker volume prune
-
-prune:
-	make c-prune && make i-prune && make v-prune
