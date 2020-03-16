@@ -1,6 +1,6 @@
 # dev
 dev:
-	@docker run -it -v ${PWD}:/go-api -w /go-api golang:1.14.0-alpine3.11 sh
+	@docker run -it -v ${PWD}:/go-api -w /go-api -p 8070:8080 --name="sanma-api-dev" golang:1.14.0-alpine3.11 sh
 
 # run
 build:
