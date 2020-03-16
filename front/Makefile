@@ -1,11 +1,13 @@
+CONTAINER_NAME:=sanma-front
+
 build:
-	docker build -t front .
+	@docker build -t $(CONTAINER_NAME) .
 
 run:
-	docker run --rm -it -p 8080:8080 -v ${PWD}:/app/ front
+	@docker run --rm -it -p 8080:8080 -v ${PWD}:/app/ sanma-front
 
 exec:
-	docker exec -it front sh
+	@docker exec -it sanma-front sh
 
 stop:
-	docker rm -f front
+	@docker rm -f sanma-front
