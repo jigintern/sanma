@@ -4,10 +4,10 @@ build:
 	@docker build -t $(CONTAINER_NAME) .
 
 run:
-	@docker run --rm -it -p 8080:8080 -v ${PWD}:/app/ sanma-front
+	@docker run --rm -it -p 8080:8080 -v ${PWD}:/app/ --name="$(CONTAINER_NAME)" $(CONTAINER_NAME)
 
 exec:
-	@docker exec -it sanma-front sh
+	@docker exec -it $(CONTAINER_NAME) sh
 
 stop:
-	@docker rm -f sanma-front
+	@docker rm -f $(CONTAINER_NAME)
