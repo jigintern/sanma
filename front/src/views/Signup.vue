@@ -6,8 +6,8 @@
       </v-card-title>
 
       <v-card-text>
+        <div class="display-1 font-weight-black">ID:{{ splitMail }}</div>
         <v-form>
-          <v-text-field v-model="id" prepend-icon="mdi-account" type="text" label="id" />
           <v-text-field v-model="mail" prepend-icon="mdi-email" type="email" label="mail" />
           <v-text-field
             v-model="password"
@@ -37,6 +37,12 @@ export default {
       mail: "",
       password: ""
     };
+  },
+
+  computed: {
+    splitMail: function() {
+      return this.mail.split("@")[0];
+    }
   },
 
   methods: {
