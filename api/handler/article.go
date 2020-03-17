@@ -21,6 +21,7 @@ func GetAllArticles(c *gin.Context) {
 		})
 	}
 
+	c.Header("Access-Control-Allow-Origin", "*")
 	c.JSON(http.StatusOK, articles)
 }
 
@@ -39,6 +40,7 @@ func GetArticlesByAID(c *gin.Context) {
 		})
 	}
 
+	c.Header("Access-Control-Allow-Origin", "*")
 	c.JSON(http.StatusOK, article)
 }
 

@@ -43,8 +43,8 @@ export default {
     }
   },
 
-  mounted: function() {
-    this.$axios.get("https://sanma.intern.jigd.info/api/articles").then(res => {
+  mounted: async function() {
+    this.$axios.get("http://127.0.0.1:8090/api/articles").then(res => {
       console.log(res);
       this.articles = res.data;
       this.loading = false;
