@@ -1,10 +1,10 @@
 package handler
 
-import(
+import (
 	"github.com/gin-gonic/gin"
 
-	"sanma/domain"
+	// "sanma/domain"
 )
 
-func NewUser(c *gin.Context){}
-func AuthN(c *gin.Context){}
+func NewUser(c *gin.Context) {}
+func AuthN(c *gin.Context) {}

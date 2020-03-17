@@ -2,7 +2,7 @@ package domain
 
 import (
 	"time"
-	
+
 	"sanma/infra"
 )
 
@@ -16,4 +16,18 @@ type Articles struct {
 	Contents       string     `json:"contents"`
 	Created_at     *time.Time `json:"created_at"`
 	Updated_at     *time.Time `json:"updated_at"`
+}
+
+func GetAllArticles() ([]*Articles, error) {
+	var l []*Articles
+
+	db := infra.Connect()
+	defer db.Close()
+
+	err := db.Find(&l).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return l, err
 }

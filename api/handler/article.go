@@ -11,7 +11,7 @@ import (
 func NewArticle(c *gin.Context) {}
 
 func GetAllArticles(c *gin.Context) {
-	articles, err = domain.GetAllArticles()
+	articles, err := domain.GetAllArticles()
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err,

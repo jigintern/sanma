@@ -1,7 +1,7 @@
 package domain
 
 import (
-	"sanma/infra"
+	// "sanma/infra"
 )
 
 type Users struct {
