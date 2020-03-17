@@ -10,6 +10,8 @@ CREATE TABLE articles
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME NOT NULL,
   PRIMARY KEY(article_id),
-  FOREIGN KEY(author) REFERENCES users (user_id)
+  FOREIGN KEY(author) REFERENCES users (user_id),
+  FOREIGN KEY(article_status) REFERENCES a_status (status_id),
+  FOREIGN KEY(article_type) REFERENCES a_type (type_id)
 )
 ENGINE=InnoDB;

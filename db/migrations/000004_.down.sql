@@ -1,1 +1,1 @@
-DROP TABLE article_status;
+DROP TABLE article_type;
