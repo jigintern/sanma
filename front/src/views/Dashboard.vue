@@ -16,19 +16,11 @@
 
             <v-card-text>
               <v-form>
-                <v-text-field v-model="email" prepend-icon="mdi-email" type="email" label="mail" />
-                <v-text-field
-                  v-model="password"
-                  v-bind:type="showPassword ? 'text' : 'password'"
-                  prepend-icon="mdi-lock"
-                  v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                  @click:append="showPassword = !showPassword"
-                  label="password"
-                />
+                <v-text-field v-model="url" prepend-icon="mdi-link-variant" type="url" label="URL" />
               </v-form>
 
               <v-card-actions>
-                <v-btn class="info text-none" @click="login">Login</v-btn>
+                <v-btn class="info text-none" @click="send">Send</v-btn>
               </v-card-actions>
             </v-card-text>
           </v-card>
@@ -37,6 +29,31 @@
     </v-container>
   </v-app>
 </template>
+
+<script>
+export default {
+  name: "Dashboard",
+  data: function() {
+    return {
+      url: ""
+    };
+  },
+
+  methods: {
+    send: function() {
+      console.log("send");
+      this.$axios
+        .post("/api/hogehoge", this.url)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  }
+};
+</script>
 
 <style scoped>
 .container {
