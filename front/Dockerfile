@@ -8,6 +8,6 @@ COPY package-lock.json .
 RUN apk update && \
     npm install -g npm && \
     npm install -g @vue/cli@4.1.2 \
-    npm install
+    npm ci
 
-CMD ["/bin/sh"]
+CMD npm run serve
