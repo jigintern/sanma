@@ -5,7 +5,12 @@
         <div v-show="loading">Loading...</div>
         <v-row dense v-show="!loading">
           <v-col v-for="(article, index) in articles" :key="index" cols="12" sm="12" lg="6">
-            <v-card color="blue lighten-3" height="100%" @click="click(article.id)">
+            <v-card
+              color="blue lighten-3"
+              height="100%"
+              :href="article.article_url"
+              target="_blank"
+            >
               <v-card-title class="headline">{{ article.title }}</v-card-title>
 
               <v-card-subtitle>{{ article.content | ellipsis }}</v-card-subtitle>
@@ -44,12 +49,6 @@ export default {
       this.articles = res.data;
       this.loading = false;
     });
-  },
-
-  methods: {
-    click(id) {
-      this.$router.push({ name: "Read-article", params: { id } });
-    }
   }
 };
 </script>
