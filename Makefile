@@ -1,6 +1,5 @@
 d/up:
-	@docker-compose up -d --build && \
-	make db/init
+	@docker-compose up -d --build
 
 d/down:
 	@docker-compose down
