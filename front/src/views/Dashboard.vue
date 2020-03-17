@@ -5,6 +5,7 @@
         <v-tab class="text-none">My-article</v-tab>
         <v-tab-item>
           <h1>ユーザーの記事一覧</h1>
+          <span>記事毎にeditボタンをつけよう</span>
         </v-tab-item>
         <v-tab class="text-none">New</v-tab>
         <v-tab-item>
