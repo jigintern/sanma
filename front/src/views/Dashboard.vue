@@ -1,5 +1,23 @@
 <template>
-  <div class="dashboard">
-    <h1>This is a dashboard page</h1>
-  </div>
+  <v-app>
+    <v-container>
+      <v-tabs fixed-tabs background-color="blue lighten-3">
+        <v-tab class="text-none">My-article</v-tab>
+        <v-tab-item>
+          <h1>ユーザーの記事一覧</h1>
+        </v-tab-item>
+        <v-tab class="text-none">New</v-tab>
+        <v-tab-item>
+          <h1>new</h1>
+          <span>add crawl</span>
+        </v-tab-item>
+      </v-tabs>
+    </v-container>
+  </v-app>
 </template>
+
+<style scoped>
+.container {
+  max-width: 900px;
+}
+</style>
