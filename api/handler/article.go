@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -13,12 +12,7 @@ func NewArticle(c *gin.Context) {}
 
 func GetAllArticles(c *gin.Context) {
 	user_id := c.DefaultQuery("user_id", "_")
-
-	if user_id == "_" {
-		articles, err := domain.GetAllArticles()
-	} else {
-		articles, err := domain.GetArticlesByUID(user_id)
-	}
+	articles, err := domain.GetAllArticles(user_id)
 
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{

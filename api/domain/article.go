@@ -18,13 +18,20 @@ type Articles struct {
 	Updated_at     *time.Time `json:"updated_at"`
 }
 
-func GetAllArticles() ([]*Articles, error) {
+func GetAllArticles(author string) ([]*Articles, error) {
 	var l []*Articles
 
 	db := infra.Connect()
 	defer db.Close()
 
-	err := db.Find(&l).Error
+	var err error
+
+	if author == "_" {
+		err = db.Find(&l).Error
+	} else {
+		err = db.Where("author = ?", author).Find(&l).Error
+	}
+
 	if err != nil {
 		return nil, err
 	}
