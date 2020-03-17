@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36e072d8-eef8-48f6-b0ed-a2bc63b06cd6" name="Default Changelist" comment="・MySQLアダプタを依存関係に追加&#10;・データベースアップロード機能の実装">
-      <change afterPath="$PROJECT_DIR$/.idea/$CACHE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +111,7 @@
       <workItem from="1584333130583" duration="6695000" />
       <workItem from="1584340922803" duration="807000" />
       <workItem from="1584341755416" duration="20553000" />
-      <workItem from="1584422303004" duration="677000" />
+      <workItem from="1584422303004" duration="973000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1584340096370</created>
@@ -155,7 +148,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584422782982</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="・MySQLアダプタを依存関係に追加&#10;・データベースアップロード機能の実装">
+      <created>1584423004935</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584423004935</updated>
+    </task>
+    <task id="LOCAL-00007" summary="・MySQLアダプタを依存関係に追加&#10;・データベースアップロード機能の実装">
+      <created>1584423059262</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584423059262</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,10 +230,10 @@
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="609" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.991@0.23.1680.991" timestamp="1584421071878" />
-    <state x="616" y="72" key="CommitChangelistDialog2" timestamp="1584422909021">
+    <state x="616" y="72" key="CommitChangelistDialog2" timestamp="1584423234803">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
-    <state x="616" y="72" key="CommitChangelistDialog2/0.23.1680.991@0.23.1680.991" timestamp="1584422909021" />
+    <state x="616" y="72" key="CommitChangelistDialog2/0.23.1680.991@0.23.1680.991" timestamp="1584423234803" />
     <state x="336" y="112" width="1344" height="792" key="DiffContextDialog" timestamp="1584422881958">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
@@ -315,14 +322,18 @@
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="640" y="236" key="RollbackChangesDialog/0.23.1680.991@0.23.1680.991" timestamp="1584369560498" />
+    <state x="829" y="230" key="VCS.ChangeListViewerDialog" timestamp="1584423093349">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state x="829" y="230" key="VCS.ChangeListViewerDialog/0.23.1680.991@0.23.1680.991" timestamp="1584423093349" />
     <state x="867" y="123" width="713" height="791" key="VCS.FileHistoryDialog" timestamp="1584420968794">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="867" y="123" width="713" height="791" key="VCS.FileHistoryDialog/0.23.1680.991@0.23.1680.991" timestamp="1584420968794" />
-    <state x="299" y="259" width="1338" height="520" key="Vcs.Push.Dialog.v2" timestamp="1584422852566">
+    <state x="299" y="259" width="1338" height="520" key="Vcs.Push.Dialog.v2" timestamp="1584423177749">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
-    <state x="299" y="259" width="1338" height="520" key="Vcs.Push.Dialog.v2/0.23.1680.991@0.23.1680.991" timestamp="1584422852566" />
+    <state x="299" y="259" width="1338" height="520" key="Vcs.Push.Dialog.v2/0.23.1680.991@0.23.1680.991" timestamp="1584423177749" />
     <state x="710" y="259" key="VcsDiffUtil.ChangesDialog" timestamp="1584420995972">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
@@ -355,6 +366,10 @@
       <screen x="0" y="23" width="1680" height="991" />
     </state>
     <state x="868" y="318" key="git4idea.merge.GitPullDialog/0.23.1680.991@0.23.1680.991" timestamp="1584422819311" />
+    <state x="805" y="390" key="git4idea.rebase.GitRebaseDialog" timestamp="1584423103462">
+      <screen x="0" y="23" width="1680" height="991" />
+    </state>
+    <state x="805" y="390" key="git4idea.rebase.GitRebaseDialog/0.23.1680.991@0.23.1680.991" timestamp="1584423103462" />
     <state x="1014" y="421" key="git4idea.ui.GitResetDialog" timestamp="1584341867831">
       <screen x="0" y="23" width="1680" height="991" />
     </state>
