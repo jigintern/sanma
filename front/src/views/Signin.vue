@@ -8,7 +8,13 @@
       <v-card-text>
         <v-form>
           <v-text-field prepend-icon="mdi-email" type="email" label="mail" />
-          <v-text-field prepend-icon="mdi-lock" type="password" label="password" />
+          <v-text-field
+            v-bind:type="showPassword ? 'text' : 'password'"
+            prepend-icon="mdi-lock"
+            v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append="showPassword = !showPassword"
+            label="password"
+          />
         </v-form>
 
         <v-card-actions>
@@ -18,3 +24,14 @@
     </v-card>
   </v-app>
 </template>
+
+<script>
+export default {
+  name: "Signin",
+  data: function() {
+    return {
+      showPassword: false
+    };
+  }
+};
+</script>
