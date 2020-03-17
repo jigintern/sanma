@@ -14,13 +14,13 @@
             <v-card
               color="blue lighten-3"
               height="100%"
-              @click="click(article.id)"
+              @click="click(article.url)"
             >
-              <v-card-title class="headline">{{ article.title }}</v-card-title>
+              <v-card-title class="headline">{{ article.headline }}</v-card-title>
 
-              <v-card-subtitle>{{ article.body | ellipsis }}</v-card-subtitle>
+              <v-card-subtitle>{{ article.articleBody | ellipsis }}</v-card-subtitle>
 
-              <v-card-actions>id: {{ article.user.id }}</v-card-actions>
+              <v-card-actions>id: {{ article.author['http://schema.org/Person'].name }}</v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -83,7 +83,7 @@ export default {
   },
 
   mounted: function() {
-    this.$axios.get("https://qiita.com/api/v2/items").then(res => {
+    this.$axios.get("/sanma-sample.json").then(res => {
       console.log(res);
       this.articles = res.data;
       this.loading = false;
@@ -92,7 +92,8 @@ export default {
 
   methods: {
     click(id) {
-      this.$router.push({ name: "Read-article", params: { id } });
+      window.open(id)
+      //this.$router.push({ name: "Read-article", params: { id } });
     }
   }
 };
