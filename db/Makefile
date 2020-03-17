@@ -5,6 +5,12 @@ DB_PORT:=3306
 DATASOURCE:=mysql://root:password@tcp($(DB_HOST):$(DB_PORT))/
 MIGRATIONPATH:=migrations
 
+dev/b:
+	@docker build -t "sanma-db-dev" .
+
+dev/r:
+	@docker run --rm -it -p 3307:3306 -v ${PWD}:/mig/ -w /mig --name="sanma-db-dev" sanma-db-dev /bin/bash
+
 mysql:
 	@docker exec -it $(CONTAINER_NAME) mysql -u root -h $(DB_HOST) -P $(DB_PORT) --protocol tcp -p $(DB_NAME)
 

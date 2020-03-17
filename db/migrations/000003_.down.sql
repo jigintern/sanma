@@ -1,1 +1,1 @@
-DROP TABLE crawl_targets;
+DROP TABLE article_status;
