@@ -3,14 +3,6 @@ const cheerio = require('cheerio');
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-    host: 'test.cnddxi4etcjb.us-east-2.rds.amazonaws.com',
-    user: 'admin',
-    password: 'password',
-    port: 3306,
-    database: 'test'
-});
-
-const connection = mysql.createConnection({
     host: 'sanma-db',
     user: 'root',
     password: 'password',
