@@ -43,11 +43,6 @@ const routes = [{
     name: 'Edit-article',
     component: () => import('../views/Edit-article.vue')
   },
-  {
-    path: '/add-crawl',
-    name: 'Add-crawl',
-    component: () => import('../views/Add-crawl.vue')
-  }
 ]
 
 const router = new VueRouter({
