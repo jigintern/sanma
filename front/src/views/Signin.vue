@@ -45,7 +45,7 @@ export default {
         password: this.password
       };
       this.$axios
-        .post("/login", params)
+        .post("/api/authentication", params)
         .then(res => {
           console.log(res);
         })
