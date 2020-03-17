@@ -4,6 +4,9 @@ d/up:
 d/down:
 	@docker-compose down
 
+d/re:
+	make d/down && make d/up
+
 # db
 mysql:
 	@cd db && \
