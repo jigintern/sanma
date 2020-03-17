@@ -1,6 +1,8 @@
 package handler
 
-import(
+import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 
 	"sanma/domain"
@@ -8,10 +10,17 @@ import(
 
 func AddCrawlTarget(c *gin.Context) {
 	c.Request.ParseForm()
-	newTarget := c.Request.Form["new-crawl-target"]
+	newTargetUrl := c.Request.Form["new-crawl-target"][0]
 
 	// todo: あとで現在のユーザーを取得するように変更する
-	currentUser := "admin"
+	currentUserID := "admin"
 
-	domain.
+	err := domain.AddNewTarget(newTargetUrl, currentUserID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err,
+		})
+	}
+
+	c.JSON(http.StatusOK, gin.H{})
 }
