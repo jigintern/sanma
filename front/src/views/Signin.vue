@@ -7,8 +7,9 @@
 
       <v-card-text>
         <v-form>
-          <v-text-field prepend-icon="mdi-email" type="email" label="mail" />
+          <v-text-field v-model="email" prepend-icon="mdi-email" type="email" label="mail" />
           <v-text-field
+            v-model="password"
             v-bind:type="showPassword ? 'text' : 'password'"
             prepend-icon="mdi-lock"
             v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -18,7 +19,7 @@
         </v-form>
 
         <v-card-actions>
-          <v-btn class="info text-none">Login</v-btn>
+          <v-btn class="info text-none" @click="login">Login</v-btn>
         </v-card-actions>
       </v-card-text>
     </v-card>
@@ -30,8 +31,28 @@ export default {
   name: "Signin",
   data: function() {
     return {
-      showPassword: false
+      showPassword: false,
+      email: "",
+      password: ""
     };
+  },
+
+  methods: {
+    login: function() {
+      console.log("submit");
+      let params = {
+        email: this.email,
+        password: this.password
+      };
+      this.$axios
+        .post("/login", params)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 };
 </script>
