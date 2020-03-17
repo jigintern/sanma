@@ -7,7 +7,12 @@
           <div v-show="loading">Loading...</div>
           <v-row dense v-show="!loading">
             <v-col v-for="(article, index) in articles" :key="index" cols="12">
-              <v-card color="blue lighten-3" height="100%" @click="click(article.id)">
+              <v-card
+                color="blue lighten-3"
+                height="100%"
+                :href="article.article_url"
+                target="_blank"
+              >
                 <v-card-title class="headline">{{ article.title }}</v-card-title>
 
                 <v-card-text>id: {{ article.user.id }}</v-card-text>
@@ -72,10 +77,6 @@ export default {
         .catch(err => {
           console.log(err);
         });
-    },
-
-    click(id) {
-      this.$router.push({ name: "Edit-article", params: { id } });
     }
   }
 };
