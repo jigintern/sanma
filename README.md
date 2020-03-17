@@ -15,4 +15,4 @@
 * 記事削除: delete, api/articles/{{ .article_id }}
 
 ### Crawl target urls
-* ターゲット追加: get, api/crawl-targets
+* ターゲット追加: post, api/crawl-targets
