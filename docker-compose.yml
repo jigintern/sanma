@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: sanma-api
+    restart: always
+    ports:
+      - 127.0.0.1:8090:8080
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    volumes:
+      - ./db/migrations:/migrations
+    container_name: sanma-db
+    restart: always
+    ports:
+      - 127.0.0.1:3306:3306
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      TZ: "Asia/Tokyo"
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    volumes:
+      - ./front:/app
+    container_name: sanma-front
+    restart: always
+    ports:
+      - 127.0.0.1:8080:8080
