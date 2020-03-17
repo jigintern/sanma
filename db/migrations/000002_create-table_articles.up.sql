@@ -2,8 +2,8 @@ CREATE TABLE articles
 (
   article_id INT UNIQUE AUTO_INCREMENT,
   author VARCHAR(128),
-  article_status VARCHAR(10) NOT NULL,
-  article_type VARCHAR(10) NOT NULL,
+  article_status INT NOT NULL,
+  article_type INT NOT NULL,
   article_url VARCHAR(128),
   title VARCHAR(128) NOT NULL,
   contents TEXT NOT NULL,
