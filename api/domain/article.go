@@ -1,8 +1,6 @@
 package domain
 
 import (
-	"time"
-
 	"sanma/infra"
 )
 
@@ -14,8 +12,6 @@ type Articles struct {
 	Article_url    string     `json:"article_url"`
 	Title          string     `json:"title"`
 	Contents       string     `json:"contents"`
-	Created_at     *time.Time `json:"created_at"`
-	Updated_at     *time.Time `json:"updated_at"`
 }
 
 func GetAllArticles(author string) ([]*Articles, error) {
