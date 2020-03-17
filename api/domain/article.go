@@ -1,8 +1,9 @@
 package domain
 
 import (
-	"sanma/infra"
 	"time"
+	
+	"sanma/infra"
 )
 
 type Articles struct {
