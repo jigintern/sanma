@@ -34,6 +34,7 @@ export default {
     return {
       showPassword: false,
       id: "",
+      mail: "",
       password: ""
     };
   },
@@ -43,6 +44,7 @@ export default {
       console.log("submit");
       let params = {
         id: this.id,
+        mail: this.mail,
         password: this.password
       };
       this.$axios
