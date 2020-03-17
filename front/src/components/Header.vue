@@ -5,6 +5,7 @@
         <v-btn class="ml-4 text-none" outlined to="/">Top</v-btn>
       </v-toolbar-title>
       <v-btn class="ml-4 text-none" outlined to="/about">About</v-btn>
+      <v-btn class="ml-4 text-none" outlined to="/dashboard">Dashboard</v-btn>
       <v-spacer></v-spacer>
       <h2>sanma</h2>
       <v-spacer></v-spacer>
