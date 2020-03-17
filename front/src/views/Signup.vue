@@ -41,7 +41,8 @@ export default {
 
   computed: {
     splitMail: function() {
-      return this.mail.split("@")[0];
+      let account = this.mail.split("@")[0];
+      return account;
     }
   },
 
@@ -49,10 +50,11 @@ export default {
     login: function() {
       console.log("submit");
       let params = {
-        id: this.id,
+        id: this.splitMail,
         mail: this.mail,
         password: this.password
       };
+      console.log(params);
       this.$axios
         .post("/api/authentication", params)
         .then(res => {
