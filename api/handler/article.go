@@ -11,12 +11,15 @@ import (
 func NewArticle(c *gin.Context) {}
 
 func GetAllArticles(c *gin.Context) {
-	articles, err := domain.GetAllArticles()
+	user_id := c.DefaultQuery("user_id", "_")
+	articles, err := domain.GetAllArticles(user_id)
+
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": err,
 		})
 	}
+
 	c.JSON(http.StatusOK, articles)
 }
 
