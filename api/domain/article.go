@@ -38,3 +38,16 @@ func GetAllArticles(author string) ([]*Articles, error) {
 
 	return l, err
 }
+
+func GetArticleByAID(article_id uint64) (*Articles, error) {
+	db := infra.Connect()
+	defer db.Close()
+
+	searchArticle := Articles{}
+	err := db.Where("article_id = ?", article_id).First(&searchArticle).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return &searchArticle, err
+}
