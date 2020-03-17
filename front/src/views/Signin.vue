@@ -7,7 +7,7 @@
 
       <v-card-text>
         <v-form>
-          <v-text-field v-model="email" prepend-icon="mdi-email" type="email" label="mail" />
+          <v-text-field v-model="id" prepend-icon="mdi-account" type="text" label="id" />
           <v-text-field
             v-model="password"
             v-bind:type="showPassword ? 'text' : 'password'"
@@ -32,7 +32,7 @@ export default {
   data: function() {
     return {
       showPassword: false,
-      email: "",
+      id: "",
       password: ""
     };
   },
@@ -41,7 +41,7 @@ export default {
     login: function() {
       console.log("submit");
       let params = {
-        email: this.email,
+        id: this.id,
         password: this.password
       };
       this.$axios
