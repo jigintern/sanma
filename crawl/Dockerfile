@@ -1,7 +1,13 @@
-FROM alpine:latest
+FROM node:13.10.1-alpine3.10
+
 WORKDIR /app
-RUN apk add --no-cache nodejs npm
+
 COPY package.json .
 COPY package-lock.json .
 COPY index.js .
-CMD ["/bin/sh"]
+
+RUN apk update && \
+    npm install -g npm && \
+    npm ci
+
+CMD node index.js
