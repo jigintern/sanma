@@ -13,3 +13,6 @@
 * 特定の記事取得: get, /api/articles/{{ .article_id }}
 * 記事更新: put, api/articles/{{ .article_id }}
 * 記事削除: delete, api/articles/{{ .article_id }}
+
+### Crawl target urls
+* ターゲット追加: post, api/crawl-targets
