@@ -18,16 +18,36 @@ type Articles struct {
 	Updated_at     *time.Time `json:"updated_at"`
 }
 
-func GetAllArticles() ([]*Articles, error) {
+func GetAllArticles(author string) ([]*Articles, error) {
 	var l []*Articles
 
 	db := infra.Connect()
 	defer db.Close()
 
-	err := db.Find(&l).Error
+	var err error
+
+	if author == "_" {
+		err = db.Find(&l).Error
+	} else {
+		err = db.Where("author = ?", author).Find(&l).Error
+	}
+
 	if err != nil {
 		return nil, err
 	}
 
 	return l, err
+}
+
+func GetArticleByAID(article_id uint64) (*Articles, error) {
+	db := infra.Connect()
+	defer db.Close()
+
+	searchArticle := Articles{}
+	err := db.Where("article_id = ?", article_id).First(&searchArticle).Error
+	if err != nil {
+		return nil, err
+	}
+
+	return &searchArticle, err
 }
