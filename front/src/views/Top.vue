@@ -8,9 +8,9 @@
             <v-card color="blue lighten-3" height="100%" @click="click(article.id)">
               <v-card-title class="headline">{{ article.title }}</v-card-title>
 
-              <v-card-subtitle>{{ article.body | ellipsis }}</v-card-subtitle>
+              <v-card-subtitle>{{ article.content | ellipsis }}</v-card-subtitle>
 
-              <v-card-actions>id: {{ article.user.id }}</v-card-actions>
+              <v-card-actions>id: {{ article.author }}</v-card-actions>
             </v-card>
           </v-col>
         </v-row>
