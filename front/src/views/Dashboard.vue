@@ -4,8 +4,20 @@
       <v-tabs fixed-tabs background-color="blue lighten-3">
         <v-tab class="text-none">My-article</v-tab>
         <v-tab-item>
-          <h1>ユーザーの記事一覧</h1>
-          <span>記事毎にeditボタンをつけよう</span>
+          <div v-show="loading">Loading...</div>
+          <v-row dense v-show="!loading">
+            <v-col v-for="(article, index) in articles" :key="index" cols="12">
+              <v-card color="blue lighten-3" height="100%" @click="click(article.id)">
+                <v-card-title class="headline">{{ article.title }}</v-card-title>
+
+                <v-card-text>id: {{ article.user.id }}</v-card-text>
+
+                <v-card-actions>
+                  <v-btn class="text-none" @click="edit">Edit</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
         </v-tab-item>
         <v-tab class="text-none">New</v-tab>
         <v-tab-item>
@@ -35,8 +47,18 @@ export default {
   name: "Dashboard",
   data: function() {
     return {
-      url: ""
+      loading: true,
+      url: "",
+      articles: []
     };
+  },
+
+  mounted: function() {
+    this.$axios.get("https://qiita.com/api/v2/items").then(res => {
+      console.log(res);
+      this.articles = res.data;
+      this.loading = false;
+    });
   },
 
   methods: {
@@ -50,6 +72,10 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+
+    click(id) {
+      this.$router.push({ name: "Edit-article", params: { id } });
     }
   }
 };
